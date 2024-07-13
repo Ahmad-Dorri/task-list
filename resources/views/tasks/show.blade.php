@@ -16,4 +16,9 @@
     <p>
         {{ $task->updated_at }}
     </p>
+    <div>
+        <x-link href="{{ route('tasks.index') }}" >
+            Go Back ...
+        </x-link>
+    </div>
 </x-layout>
