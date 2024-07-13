@@ -1,10 +1,12 @@
 <x-layout>
-    <h1>The list of tasks</h1>
+    <x-heading>
+        The list of tasks
+    </x-heading>
     @if(count($tasks))
         <ul>
             @foreach($tasks as $task)
                 <li>
-                    <a href="{{ route('tasks.show', ['id' => $task->id]) }}" >
+                    <a href="{{ route('tasks.show', ['id' => $task->id]) }}">
                         {{ $task->title }}
                     </a>
                 </li>

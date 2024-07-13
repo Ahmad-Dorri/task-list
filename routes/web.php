@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class Task
 {
@@ -57,15 +58,21 @@ $tasks = [
     ),
 ];
 
-Route::get('/', function () use ($tasks) {
+Route::get('/', function () {
+    return redirect()->route('tasks.index');
+});
+
+Route::get('/tasks', function () use ($tasks) {
     return view('tasks.index', compact('tasks'));
 })->name('tasks.index');
 
-Route::get('/{id}', function ($id) use ($tasks) {
-    foreach ($tasks as $task) {
-        if ((string) $task->id === $id) {
-            return view('tasks.show', compact('task'));
-        }
+Route::get('/tasks/{id}', function ($id) use ($tasks) {
+    $task = collect($tasks)->firstWhere('id', $id);
+
+    if (! $task) {
+        abort(ResponseAlias::HTTP_NOT_FOUND);
     }
-    abort(404);
+
+    return view('tasks.show', compact('task'));
+
 })->name('tasks.show');
