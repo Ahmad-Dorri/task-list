@@ -21,11 +21,12 @@ Route::post('/tasks', function (Request $request) {
     $attributes = $request->validate([
         'title' => ['required', 'max:255'],
         'description' => ['required'],
+        'long_description' => []
     ]);
 
     Task::query()->create($attributes);
 
-    return redirect()->route('tasks.index');
+    return redirect()->route('tasks.index')->with('success', 'Task created!');
 })->name('tasks.store');
 
 Route::get('/tasks/{id}', function ($id) {

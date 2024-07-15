@@ -1,4 +1,9 @@
 <x-layout>
+    @if(session()->has('success'))
+        <p class="alert alert-success my-16" >
+            {{ session('success') }}
+        </p>
+    @endif
     <x-heading>
         The list of tasks
     </x-heading>
