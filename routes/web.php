@@ -17,14 +17,33 @@ Route::get('/tasks', function () {
 
 Route::view('/tasks/create', 'tasks.create')->name('tasks.create');
 
+Route::patch('/tasks/{id}', function (Request $request, $id) {
+    $formData = $request->validate([
+        'title' => 'required|max:255',
+        'description' => 'required',
+        'long_description' => '',
+        'completed' => ''
+    ]);
+
+    Task::query()->find($id)->update($formData);
+
+    return redirect()->route('tasks.show', $id)->with('success', 'Task updated.');
+
+})->name('tasks.update');
+
+Route::get('/tasks/{id}/edit', function ($id) {
+    $task = Task::query()->findOrFail($id);
+    return view('tasks.edit', compact('task'));
+})->name('tasks.edit');
+
 Route::post('/tasks', function (Request $request) {
-    $attributes = $request->validate([
+    $formData = $request->validate([
         'title' => ['required', 'max:255'],
         'description' => ['required'],
         'long_description' => []
     ]);
 
-    Task::query()->create($attributes);
+    Task::query()->create($formData);
 
     return redirect()->route('tasks.index')->with('success', 'Task created!');
 })->name('tasks.store');

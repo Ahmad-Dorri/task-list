@@ -16,6 +16,9 @@
     <p>
         {{ $task->updated_at }}
     </p>
+    <a class="btn btn-accent" href="{{ route('tasks.edit', ['id' => $task->id]) }}" >
+        edit this task
+    </a>
     <div>
         <x-link href="{{ route('tasks.index') }}" >
             Go Back ...
