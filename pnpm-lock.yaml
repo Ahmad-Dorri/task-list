@@ -8,12 +8,21 @@ importers:
 
   .:
     devDependencies:
+      '@tailwindcss/forms':
+        specifier: ^0.5.7
+        version: 0.5.7(tailwindcss@3.4.4)
+      '@tailwindcss/typography':
+        specifier: ^0.5.13
+        version: 0.5.13(tailwindcss@3.4.4)
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.39)
       axios:
         specifier: ^1.6.4
         version: 1.7.2
+      daisyui:
+        specifier: ^4.12.10
+        version: 4.12.10(postcss@8.4.39)
       laravel-vite-plugin:
         specifier: ^1.0.0
         version: 1.0.5(vite@5.3.3)
@@ -289,6 +298,16 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@tailwindcss/forms@0.5.7':
+    resolution: {integrity: sha512-QE7X69iQI+ZXwldE+rzasvbJiyV/ju1FGHH0Qn2W3FKbuYtqp8LKcy6iSw79fVUT5/Vvf+0XgLCeYVG+UV6hOw==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+
+  '@tailwindcss/typography@0.5.13':
+    resolution: {integrity: sha512-ADGcJ8dX21dVVHIwTRgzrcunY6YY9uSlAHHGVKvkA+vLc5qLwEszvKts40lx7z0qc4clpjclwLeK5rVCV2P/uw==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
@@ -380,10 +399,21 @@ packages:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
 
+  css-selector-tokenizer@0.8.0:
+    resolution: {integrity: sha512-Jd6Ig3/pe62/qe5SBPTN8h8LeUg/pT4lLgtavPf7updwwHpvFzxvOQBHYj2LZDMjUnBzgvIUSjRcf6oT5HzHFg==}
+
   cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+
+  culori@3.3.0:
+    resolution: {integrity: sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+
+  daisyui@4.12.10:
+    resolution: {integrity: sha512-jp1RAuzbHhGdXmn957Z2XsTZStXGHzFfF0FgIOZj3Wv9sH7OZgLfXTRZNfKVYxltGUOBsG1kbWAdF5SrqjebvA==}
+    engines: {node: '>=16.9.0'}
 
   delayed-stream@1.0.0:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
@@ -419,6 +449,9 @@ packages:
   fast-glob@3.3.2:
     resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
     engines: {node: '>=8.6.0'}
+
+  fastparse@1.1.2:
+    resolution: {integrity: sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==}
 
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
@@ -523,6 +556,15 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
+  lodash.castarray@4.4.0:
+    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
+
+  lodash.isplainobject@4.0.6:
+    resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
+
+  lodash.merge@4.6.2:
+    resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
@@ -541,6 +583,10 @@ packages:
   mime-types@2.1.35:
     resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
     engines: {node: '>= 0.6'}
+
+  mini-svg-data-uri@1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
 
   minimatch@9.0.5:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
@@ -635,6 +681,10 @@ packages:
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
+
+  postcss-selector-parser@6.0.10:
+    resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
+    engines: {node: '>=4'}
 
   postcss-selector-parser@6.1.1:
     resolution: {integrity: sha512-b4dlw/9V8A71rLIDsSwVmak9z2DuBUB7CA1/wSdelNEzqsjoSPeADTWNO09lpH49Diy3/JIZ2bSPB1dI3LJCHg==}
@@ -956,6 +1006,19 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.1':
     optional: true
 
+  '@tailwindcss/forms@0.5.7(tailwindcss@3.4.4)':
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.4.4
+
+  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.4)':
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      postcss-selector-parser: 6.0.10
+      tailwindcss: 3.4.4
+
   '@types/estree@1.0.5': {}
 
   ansi-regex@5.0.1: {}
@@ -1050,7 +1113,23 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
+  css-selector-tokenizer@0.8.0:
+    dependencies:
+      cssesc: 3.0.0
+      fastparse: 1.1.2
+
   cssesc@3.0.0: {}
+
+  culori@3.3.0: {}
+
+  daisyui@4.12.10(postcss@8.4.39):
+    dependencies:
+      css-selector-tokenizer: 0.8.0
+      culori: 3.3.0
+      picocolors: 1.0.1
+      postcss-js: 4.0.1(postcss@8.4.39)
+    transitivePeerDependencies:
+      - postcss
 
   delayed-stream@1.0.0: {}
 
@@ -1101,6 +1180,8 @@ snapshots:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.7
+
+  fastparse@1.1.2: {}
 
   fastq@1.17.1:
     dependencies:
@@ -1191,6 +1272,12 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
+  lodash.castarray@4.4.0: {}
+
+  lodash.isplainobject@4.0.6: {}
+
+  lodash.merge@4.6.2: {}
+
   lru-cache@10.4.3: {}
 
   merge2@1.4.1: {}
@@ -1205,6 +1292,8 @@ snapshots:
   mime-types@2.1.35:
     dependencies:
       mime-db: 1.52.0
+
+  mini-svg-data-uri@1.4.4: {}
 
   minimatch@9.0.5:
     dependencies:
@@ -1272,6 +1361,11 @@ snapshots:
     dependencies:
       postcss: 8.4.39
       postcss-selector-parser: 6.1.1
+
+  postcss-selector-parser@6.0.10:
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
 
   postcss-selector-parser@6.1.1:
     dependencies:

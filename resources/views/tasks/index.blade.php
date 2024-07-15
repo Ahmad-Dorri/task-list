@@ -15,4 +15,7 @@
     @else
         <h3>There is no task left</h3>
     @endif
+    <x-button href="{{ route('tasks.create') }}">
+        Create task
+    </x-button>
 </x-layout>

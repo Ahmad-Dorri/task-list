@@ -12,7 +12,7 @@
     @vite(['resources/css/app.css'])
 </head>
 <body>
-<main>
+<main class="container mx-auto px-4 pb-20" >
     {{ $slot }}
 </main>
 </body>
