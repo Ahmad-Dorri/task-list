@@ -6,13 +6,14 @@
         <ul>
             @foreach($tasks as $task)
                 <li>
-                    <x-link href="{{ route('tasks.show', ['task' => $task]) }}">
+                    {{--                    class="{{ $task->completed ? 'line-through' : '' }}" --}}
+                    <x-link @class(['line-through' => $task->completed]) href="{{ route('tasks.show', ['task' => $task]) }}">
                         {{ $task->title }}
                     </x-link>
                 </li>
             @endforeach
-            <div class="fixed bottom-0 w-full container mb-32" >
-            {{ $tasks->links('vendor.pagination.simple-tailwind') }}
+            <div class="fixed bottom-0 w-full container mb-32">
+                {{ $tasks->links('vendor.pagination.simple-tailwind') }}
             </div>
         </ul>
     @else

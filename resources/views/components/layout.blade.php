@@ -10,11 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
-    @vite(['resources/css/app.css'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 @if(session()->has('success'))
-    <p class="alert alert-success my-16">
+    <p x-show="open" x-data="{open: true}" x-on:click="open = false"
+       class="alert alert-success mt-4 mb-8">
         {{ session('success') }}
     </p>
 @endif
