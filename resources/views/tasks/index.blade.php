@@ -11,6 +11,9 @@
                     </x-link>
                 </li>
             @endforeach
+            <div class="fixed bottom-0 w-full container mb-32" >
+            {{ $tasks->links('vendor.pagination.simple-tailwind') }}
+            </div>
         </ul>
     @else
         <h3>There is no task left</h3>

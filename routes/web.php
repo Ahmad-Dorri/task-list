@@ -11,7 +11,7 @@ Route::get('/', function () {
 });
 
 Route::get('/tasks', function () {
-    $tasks = Task::query()->latest()->get();
+    $tasks = Task::query()->latest()->simplePaginate(5);
     return view('tasks.index', compact('tasks'));
 })->name('tasks.index');
 
