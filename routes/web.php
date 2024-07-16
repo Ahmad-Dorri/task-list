@@ -53,4 +53,7 @@ Route::get('/tasks/{task}', function (Task $task) {
     return view('tasks.show', compact('task'));
 })->name('tasks.show');
 
-
+Route::delete('/tasks/{task}', function (Task $task) {
+   $task->delete();
+   return redirect()->route('tasks.index')->with('success', 'Task deleted.');
+})->name('tasks.destroy');
