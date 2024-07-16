@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['title', 'description', 'long_description'];
     use HasFactory;
+
 }

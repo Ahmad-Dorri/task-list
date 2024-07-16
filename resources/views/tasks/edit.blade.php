@@ -8,20 +8,22 @@
             <input placeholder="Go Shopping"
                    class="input bg-accent-content/20 rounded-md"
                    type="text" name="title" id="title" required
-                   value="{{ $task->title }}"
+                   value="{{ old('title') ?? $task->title }}"
             />
             <x-form.error name="title"/>
             <label for="description">description</label>
             <textarea
-                rows="5"
-                class="textarea bg-accent-content/20 rounded-md"
-                name="description" id="description" required>{{$task->description}}</textarea>
+                    rows="5"
+                    class="textarea bg-accent-content/20 rounded-md"
+                    name="description" id="description"
+                    required>{{ old('description') ?? $task->description }}</textarea>
             <x-form.error name="description"/>
             <label for="long_description">Long Description</label>
             <textarea
-                rows="10"
-                class="textarea bg-accent-content/20 rounded-md"
-                name="long_description" id="long_description">{{$task->long_description}}</textarea>
+                    rows="10"
+                    class="textarea bg-accent-content/20 rounded-md"
+                    name="long_description"
+                    id="long_description">{{ old('long_description') ?? $task->long_description }}</textarea>
             <label for="completed">
                 Is completed
             </label>

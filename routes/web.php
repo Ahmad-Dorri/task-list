@@ -19,7 +19,7 @@ Route::view('/tasks/create', 'tasks.create')->name('tasks.create');
 
 Route::patch('/tasks/{id}', function (Request $request, $id) {
     $formData = $request->validate([
-        'title' => 'required|max:255',
+        'title' => 'required|max:255|min:3',
         'description' => 'required',
         'long_description' => '',
         'completed' => ''
@@ -27,7 +27,7 @@ Route::patch('/tasks/{id}', function (Request $request, $id) {
 
     Task::query()->find($id)->update($formData);
 
-    return redirect()->route('tasks.show', $id)->with('success', 'Task updated.');
+    return redirect()->route('tasks.show', ['task' => $id])->with('success', 'Task updated.');
 
 })->name('tasks.update');
 
@@ -38,7 +38,7 @@ Route::get('/tasks/{id}/edit', function ($id) {
 
 Route::post('/tasks', function (Request $request) {
     $formData = $request->validate([
-        'title' => ['required', 'max:255'],
+        'title' => ['required', 'max:255', 'min:3'],
         'description' => ['required'],
         'long_description' => []
     ]);
@@ -48,8 +48,8 @@ Route::post('/tasks', function (Request $request) {
     return redirect()->route('tasks.index')->with('success', 'Task created!');
 })->name('tasks.store');
 
-Route::get('/tasks/{id}', function ($id) {
-    $task = Task::query()->findOrFail($id);
+// route model binding
+Route::get('/tasks/{task}', function (Task $task) {
     return view('tasks.show', compact('task'));
 })->name('tasks.show');
 

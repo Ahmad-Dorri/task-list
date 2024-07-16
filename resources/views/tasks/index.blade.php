@@ -6,7 +6,7 @@
         <ul>
             @foreach($tasks as $task)
                 <li>
-                    <x-link href="{{ route('tasks.show', ['id' => $task->id]) }}">
+                    <x-link href="{{ route('tasks.show', ['task' => $task]) }}">
                         {{ $task->title }}
                     </x-link>
                 </li>
